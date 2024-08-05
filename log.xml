@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DadoClima>
+    <temperatura>11.0</temperatura>
+    <pressao>11.0</pressao>
+    <umidade>22.0</umidade>
+    <operacao>incluir</operacao>
+</DadoClima>
+<?xml version="1.0" encoding="UTF-8"?>
+<DadoClima>
+    <temperatura>11.0</temperatura>
+    <pressao>11.0</pressao>
+    <umidade>22.0</umidade>
+    <operacao>excluir</operacao>
+</DadoClima>
+<?xml version="1.0" encoding="UTF-8"?>
+<DadoClima>
+    <temperatura>11.0</temperatura>
+    <pressao>11.0</pressao>
+    <umidade>22.0</umidade>
+    <operacao>incluir</operacao>
+</DadoClima>
+<?xml version="1.0" encoding="UTF-8"?>
+<DadoClima>
+    <temperatura>1211.0</temperatura>
+    <pressao>11.0</pressao>
+    <umidade>2212.0</umidade>
+    <operacao>incluir</operacao>
+</DadoClima>

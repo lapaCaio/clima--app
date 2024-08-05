@@ -1,0 +1,6 @@
+{"temperatura": 77.0, "pressao": 33.0, "umidade": 9.0, "operacao": "incluir"}
+{"temperatura": 77.0, "pressao": 33.0, "umidade": 9.0, "operacao": "excluir"}
+{"temperatura": 11.0, "pressao": 1.0, "umidade": 121.0, "operacao": "incluir"}
+{"temperatura": 11.0, "pressao": 12.0, "umidade": 21.0, "operacao": "incluir"}
+{"temperatura": 11.0, "pressao": 1.0, "umidade": 212.0, "operacao": "incluir"}
+{"temperatura": 11.0, "pressao": 1.0, "umidade": 212.0, "operacao": "excluir"}
