@@ -6,7 +6,7 @@ package com.pss.dadosclima.view;
 
 import com.pss.dadosclima.presenter.Panels.Painel;
 import com.pss.service.LogService;
-import enums.TipoLog;
+import com.pss.enums.TipoLog;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;

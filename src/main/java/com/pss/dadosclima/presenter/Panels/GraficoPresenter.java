@@ -4,7 +4,7 @@
  */
 package com.pss.dadosclima.presenter.Panels;
 
-import enums.Operacao;
+import com.pss.enums.Operacao;
 import com.pss.dadosclima.model.DadoClima;
 import com.pss.dadosclima.view.GraficoFrame;
 import java.awt.BorderLayout;
@@ -54,7 +54,12 @@ public class GraficoPresenter implements Painel{
         float prMin = Float.MAX_VALUE;
         float prMax = Float.MIN_VALUE;
     
-    for (DadoClima dado : dados) {
+        if(dados.isEmpty()){
+          view.getChartPanel().removeAll();
+          view.getChartPanel().repaint();
+        }
+        else{
+        for (DadoClima dado : dados) {
         
         float temp = dado.getTemperatura();
         float um=dado.getUmidade();
@@ -94,7 +99,8 @@ public class GraficoPresenter implements Painel{
         view.getChartPanel().revalidate();
         view.getChartPanel().repaint();
         view.pack();
-        
+    
+    }  
         
     }
     public JInternalFrame getFrame(){

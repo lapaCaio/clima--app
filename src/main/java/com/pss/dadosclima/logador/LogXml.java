@@ -5,8 +5,8 @@
 package com.pss.dadosclima.logador;
 
 import com.pss.dadosclima.model.DadoClima;
-import enums.Operacao;
-import enums.TipoLog;
+import com.pss.enums.*;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

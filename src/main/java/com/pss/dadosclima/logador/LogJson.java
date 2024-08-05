@@ -4,7 +4,7 @@
  */
 package com.pss.dadosclima.logador;
 
-import enums.*;
+import com.pss.enums.*;
 import com.pss.dadosclima.model.DadoClima;
 import java.io.BufferedWriter;
 import java.io.FileWriter;

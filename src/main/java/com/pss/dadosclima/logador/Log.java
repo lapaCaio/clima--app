@@ -4,9 +4,9 @@
  */
 package com.pss.dadosclima.logador;
 
-import enums.Operacao;
+import com.pss.enums.*;
 import com.pss.dadosclima.model.DadoClima;
-import enums.TipoLog;
+
 
 /**
  *

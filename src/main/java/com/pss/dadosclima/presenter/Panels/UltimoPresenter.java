@@ -4,7 +4,7 @@
  */
 package com.pss.dadosclima.presenter.Panels;
 
-import enums.Operacao;
+import com.pss.enums.Operacao;
 import com.pss.dadosclima.model.DadoClima;
 import com.pss.dadosclima.view.UltimaFrame;
 import java.util.ArrayList;

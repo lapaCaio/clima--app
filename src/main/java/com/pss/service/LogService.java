@@ -8,8 +8,8 @@ import com.pss.dadosclima.logador.Log;
 import com.pss.dadosclima.logador.LogJson;
 import com.pss.dadosclima.logador.LogXml;
 import com.pss.dadosclima.model.DadoClima;
-import enums.Operacao;
-import enums.TipoLog;
+import com.pss.enums.*;
+
 
 /**
  *
