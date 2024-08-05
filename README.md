@@ -54,7 +54,7 @@ Para executar a aplicação, use o seguinte comando Maven na raiz do projeto:
 
 ```sh
 mvn clean install
-mvn exec:java -Dexec.mainClass="com.example.Main"
+mvn exec:java -Dexec.mainClass="com.pss.DadosClima"
 ```
 ## Navegação na Aplicação
 
