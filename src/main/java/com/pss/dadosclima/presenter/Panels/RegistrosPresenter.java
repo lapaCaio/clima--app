@@ -25,6 +25,7 @@ public class RegistrosPresenter implements Painel{
         view.setPosition(800,350);
         
         view.setVisible(true);
+        view.getjTable1().setVisible(false);
         
         view.getRemoverButton().addActionListener((ActionEvent e)->{
             if(view.getjTable1().getSelectedRow() !=-1)
@@ -40,6 +41,7 @@ public class RegistrosPresenter implements Painel{
                 dados.remove(dado);
                 break;
         }
+         view.getjTable1().setVisible(true);
         AlimentaTabela();
         
     }
