@@ -9,29 +9,36 @@ import java.util.ArrayList;
 import com.pss.service.LogService;
 import java.time.LocalDate;
 
-public class PrincipalPresenter {
-    private PrincipalView view;
+public final class PrincipalPresenter {
+    private final PrincipalView view;
     private ArrayList<Painel> paineis = new ArrayList<>();
     private int numregistros = 0;
-    private LogService log;
+    private final LogService log;
+    static int x = 1;
     
 
     public PrincipalPresenter() {
         log= new LogService();
         view = new PrincipalView(this.log);
         view.getDesktopPane().add(new IncluirPresenter(this).getFrame());
+        (view.getDesktopPane().getAllFrames())[0].setLocation(0, 150);
         RegistarPainel(new MediaPresenter());
         RegistarPainel(new UltimoPresenter());
         RegistarPainel(new RegistrosPresenter(this));
         RegistarPainel(new GraficoPresenter());
-        paineis.forEach((n) -> view.getDesktopPane().add(n.getFrame()));
+        
         view.repaint();
+        System.out.println((view.getDesktopPane().getAllFrames())[2].getLocation());
+        (view.getDesktopPane().getAllFrames())[4].setLocation(281, 380);
     }
-
+        
  
     
-    public void RegistarPainel(Painel painel) {
+    public void RegistarPainel(Painel painel) {  
         paineis.add(painel);
+        painel.getFrame().setLocation(x,1);
+        view.getDesktopPane().add(painel.getFrame());
+        x+=painel.getFrame().getWidth();
     }
     
     public void addMedicao(LocalDate data,float temperatura, float pressao, float umidade) {

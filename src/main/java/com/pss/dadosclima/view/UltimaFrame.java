@@ -55,13 +55,13 @@ public class UltimaFrame extends javax.swing.JInternalFrame {
 
         DataField.setEditable(false);
         DataField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        DataField.setText("DiaAno");
+        DataField.setText(" ");
         DataField.setFocusable(false);
-        DataField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
-            }
-        });
+//        DataField.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                
+//            }
+//        });
 
         TemperaturaField.setEditable(false);
         TemperaturaField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##,#0"))));

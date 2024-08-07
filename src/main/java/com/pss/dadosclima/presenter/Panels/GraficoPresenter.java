@@ -90,7 +90,7 @@ public class GraficoPresenter implements Painel{
 
         
         chartpanel.setVisible(true);
-        chartpanel.setPreferredSize(new Dimension(800, 600));
+        chartpanel.setPreferredSize(new Dimension(640, 480));
         
         view.setVisible(true);
         view.getChartPanel().removeAll();

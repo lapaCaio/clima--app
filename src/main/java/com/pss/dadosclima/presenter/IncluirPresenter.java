@@ -34,21 +34,21 @@ public class IncluirPresenter {
                         }
                 }
                 try{
-                System.out.println(Float.parseFloat(view.getTemperaturaField().getText()));
                 System.out.println(LocalDate.parse(view.getDataField().getText(),formatter));
+                System.out.println(Float.parseFloat(view.getTemperaturaField().getText()));
                 System.out.println(Float.parseFloat(view.getUmidadeField().getText()));
                 System.out.println(Float.parseFloat(view.getPressaoField().getText()));
                 presenter.addMedicao(LocalDate.parse(view.getDataField().getText(),formatter),Float.parseFloat(view.getTemperaturaField().getText()), Float.parseFloat(view.getPressaoField().getText()), Float.parseFloat(view.getUmidadeField().getText()));
                 }
                catch (DateTimeParseException ex) {
-                    // Trata o erro de conversão da data
-                    JOptionPane.showMessageDialog(view, "Data inválida.", "Erro de Data", JOptionPane.ERROR_MESSAGE);
+                    
+                    JOptionPane.showMessageDialog(view.getDesktopPane(), "Data inválida.", "Erro", JOptionPane.ERROR_MESSAGE);
                     view.getDataField().setText(LocalDate.now().format(formatter));
-                    System.err.println("Erro de formatação da data: " + ex.getMessage());
+                    System.err.println(ex.getMessage());
+                    
                 } catch (Exception ex) {
-                    // Trata quaisquer outros erros
-                    JOptionPane.showMessageDialog(view, "Ocorreu um erro inesperado: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-                    System.err.println("Erro inesperado: " + ex.getMessage());
+                    JOptionPane.showMessageDialog(view, "Ocorreu um erro. " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                    System.err.println(ex.getMessage());
                 }
                 }
         });
