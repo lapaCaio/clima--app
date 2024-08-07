@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.pss.dadosclima.logador;
 
 import com.pss.dadosclima.model.DadoClima;
@@ -11,10 +8,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- *
- * @author Sylvio
- */
+
 public class LogXml implements Log{
     public void log(DadoClima dado, Operacao op){   
     String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"

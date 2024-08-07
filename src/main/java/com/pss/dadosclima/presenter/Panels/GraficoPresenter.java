@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.pss.dadosclima.presenter.Panels;
 
 import com.pss.enums.Operacao;
 import com.pss.dadosclima.model.DadoClima;
 import com.pss.dadosclima.view.GraficoFrame;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JInternalFrame;
 import org.jfree.chart.ChartFactory;
@@ -16,10 +14,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-/**
- *
- * @author UFES
- */
+
 public class GraficoPresenter implements Painel{
    private GraficoFrame view;
    private ArrayList<DadoClima> dados = new ArrayList<>();
@@ -58,6 +53,7 @@ public class GraficoPresenter implements Painel{
           view.getChartPanel().removeAll();
           view.getChartPanel().repaint();
         }
+       
         else{
         for (DadoClima dado : dados) {
         
@@ -79,7 +75,7 @@ public class GraficoPresenter implements Painel{
         
     }
     dataset.clear();
-    // Adiciona os valores mínimo e máximo ao dataset
+
     dataset.addValue(tempMin, "Mínimo", "Temperatura");
     dataset.addValue(tempMax, "Máximo", "Temperatura");
     dataset.addValue(umMin, "Mínimo", "Umidade");
@@ -91,7 +87,11 @@ public class GraficoPresenter implements Painel{
         
         var chartpanel = new ChartPanel(maxminchart);
         
+
+        
         chartpanel.setVisible(true);
+        chartpanel.setPreferredSize(new Dimension(800, 600));
+        
         view.setVisible(true);
         view.getChartPanel().removeAll();
         view.getChartPanel().setLayout(new BorderLayout());

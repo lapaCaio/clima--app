@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+ * Click nbfs:nbhostTemplateslicense-default.txt to change this license
+ * Click nbfs:nbhostTemplatesJInternalFrame.java to edit this template
  */
 package com.pss.dadosclima.view;
 
@@ -65,7 +65,7 @@ public class GraficoFrame extends javax.swing.JInternalFrame {
         pack();
     }
 
-    // Variables declaration - do not modify
+     
     private javax.swing.JPanel ChartPanel;
-    // End of variables declaration
+     
 }

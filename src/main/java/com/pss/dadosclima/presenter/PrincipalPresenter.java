@@ -7,6 +7,7 @@ import com.pss.dadosclima.view.PrincipalView;
 import java.util.ArrayList;
 
 import com.pss.service.LogService;
+import java.time.LocalDate;
 
 public class PrincipalPresenter {
     private PrincipalView view;
@@ -33,8 +34,8 @@ public class PrincipalPresenter {
         paineis.add(painel);
     }
     
-    public void addMedicao(float temperatura, float pressao, float umidade) {
-        DadoClima dado = new DadoClima(temperatura, pressao, umidade);
+    public void addMedicao(LocalDate data,float temperatura, float pressao, float umidade) {
+        DadoClima dado = new DadoClima(data,temperatura, pressao, umidade);
         notificarPaineis(dado, Operacao.INCLUIR);
         log.handle(dado, Operacao.INCLUIR);
     }
@@ -57,61 +58,5 @@ public class PrincipalPresenter {
         view.getQuantidadeLabel().setText(String.valueOf(numregistros));
     }
     
-//    private void log(DadoClima dado, Operacao op) {
-//    String formato = getSavedLogFormat(); // Obtém o formato salvo
-//
-//    if (formato.equals("json")) {
-//        logToJSON(dado, op);
-//    } else if (formato.equals("xml")) {
-//        logToXML(dado, op);
-//    } else {
-//        System.out.println("Formato desconhecido: " + formato);
-//    }
-//}
-
-
-//    private void logToJSON(DadoClima dado, Operacao op) {
-//    String json = "{"
-//            + "\"temperatura\": " + dado.getTemperatura() + ", "
-//            + "\"pressao\": " + dado.getPressao() + ", "
-//            + "\"umidade\": " + dado.getUmidade() + ", "
-//            + "\"operacao\": \"" + (op == Operacao.INCLUIR ? "incluir" : "excluir") + "\""
-//            + "}";
-//
-//    try (BufferedWriter writer = new BufferedWriter(new FileWriter("log.json", true))) {
-//        writer.write(json);
-//        writer.newLine();
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
-//}
-//
-//private void logToXML(DadoClima dado, Operacao op) {
-//    String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-//            + "<DadoClima>\n"
-//            + "    <temperatura>" + dado.getTemperatura() + "</temperatura>\n"
-//            + "    <pressao>" + dado.getPressao() + "</pressao>\n"
-//            + "    <umidade>" + dado.getUmidade() + "</umidade>\n"
-//            + "    <operacao>" + (op == Operacao.INCLUIR ? "incluir" : "excluir") + "</operacao>\n"
-//            + "</DadoClima>";
-//
-//    try (BufferedWriter writer = new BufferedWriter(new FileWriter("log.xml", true))) {
-//        writer.write(xml);
-//        writer.newLine();
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
-//}
-//
-//
-//   private String getSavedLogFormat() {
-//    String format = "json"; // Default format
-//    try (BufferedReader reader = new BufferedReader(new FileReader("configuracao_log.txt"))) {
-//        format = reader.readLine().trim().toLowerCase();
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
-//    return format;
-//}
 
 }

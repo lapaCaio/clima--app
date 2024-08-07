@@ -4,7 +4,6 @@
   <Properties>
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="title" type="java.lang.String" value="Incluir dados de clima"/>
-    <Property name="opaque" type="boolean" value="true"/>
     <Property name="visible" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
@@ -130,38 +129,40 @@
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="DataField">
       <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format subtype="1" type="1"/>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="}&#xa;catch (ParseException e) {&#xa;            e.printStackTrace();&#xa;        }">
+          <Connection code="new javax.swing.text.DefaultFormatterFactory(mascara)" type="code"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="DD/MM/AA"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new SimpleDateFormat(&quot;dd/MM/yyyy&quot;).format(new Date())" type="code"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DataFieldActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;MaskFormatter mascara = new MaskFormatter(&quot;##/##/####&quot;);&#xa;&#xa;            mascara.setPlaceholderCharacter(&apos; &apos;);&#xa;            mascara.setValueContainsLiteralCharacters(false);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="TemperaturaField">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#0" subtype="-1" type="0"/>
-        </Property>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(temp)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="NumberFormat temp=NumberFormat.getInstance();&#xa;temp.setMaximumIntegerDigits(2);&#xa;temp.setParseIntegerOnly(true);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="UmidadeField">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#0" subtype="-1" type="0"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UmidadeFieldActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(umidade)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="NumberFormat umidade=NumberFormat.getInstance();&#xa;umidade.setMaximumIntegerDigits(2);&#xa;umidade.setParseIntegerOnly(true);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="PressaoField">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#0" subtype="-1" type="0"/>
-        </Property>
-      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(pressao)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="NumberFormat pressao=NumberFormat.getInstance();&#xa;pressao.setMaximumIntegerDigits(3);&#xa;pressao.setParseIntegerOnly(true);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="IncluirButton">
       <Properties>

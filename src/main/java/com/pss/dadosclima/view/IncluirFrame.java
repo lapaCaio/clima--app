@@ -1,11 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package com.pss.dadosclima.view;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -56,14 +58,22 @@ public class IncluirFrame extends javax.swing.JInternalFrame {
         UmidadeLabel = new javax.swing.JLabel();
         PressaoLabel = new javax.swing.JLabel();
         DataField = new javax.swing.JFormattedTextField();
-        TemperaturaField = new javax.swing.JFormattedTextField();
-        UmidadeField = new javax.swing.JFormattedTextField();
-        PressaoField = new javax.swing.JFormattedTextField();
+        NumberFormat temp=NumberFormat.getInstance();
+        temp.setMaximumIntegerDigits(2);
+        temp.setParseIntegerOnly(true);
+        TemperaturaField = new javax.swing.JFormattedTextField(temp);
+        NumberFormat umidade=NumberFormat.getInstance();
+        umidade.setMaximumIntegerDigits(2);
+        umidade.setParseIntegerOnly(true);
+        UmidadeField = new javax.swing.JFormattedTextField(umidade);
+        NumberFormat pressao=NumberFormat.getInstance();
+        pressao.setMaximumIntegerDigits(3);
+        pressao.setParseIntegerOnly(true);
+        PressaoField = new javax.swing.JFormattedTextField(pressao);
         IncluirButton = new javax.swing.JButton();
 
         setIconifiable(true);
         setTitle("Incluir dados de clima");
-        setOpaque(true);
         setVisible(true);
 
         DataLabel.setLabelFor(DataField);
@@ -79,24 +89,28 @@ public class IncluirFrame extends javax.swing.JInternalFrame {
         PressaoLabel.setLabelFor(PressaoField);
         PressaoLabel.setText("Pressão:");
 
-        DataField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        DataField.setText("DD/MM/AA");
+        try{
+            MaskFormatter mascara = new MaskFormatter("##/##/####");
+
+            mascara.setPlaceholderCharacter(' ');
+            mascara.setValueContainsLiteralCharacters(false);
+            DataField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(mascara));
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+        DataField.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
         DataField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DataFieldActionPerformed(evt);
             }
         });
 
-        TemperaturaField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
-        UmidadeField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         UmidadeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UmidadeFieldActionPerformed(evt);
             }
         });
-
-        PressaoField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         IncluirButton.setText("Incluir");
 

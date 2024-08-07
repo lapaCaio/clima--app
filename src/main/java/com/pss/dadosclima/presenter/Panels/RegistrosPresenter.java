@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.pss.dadosclima.presenter.Panels;
 
 import com.pss.enums.Operacao;
@@ -9,6 +6,7 @@ import com.pss.dadosclima.model.DadoClima;
 import com.pss.dadosclima.presenter.PrincipalPresenter;
 import com.pss.dadosclima.view.RegistrosFrame;
 import java.awt.event.ActionEvent;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JInternalFrame;
 import javax.swing.table.DefaultTableModel;
@@ -29,6 +27,7 @@ public class RegistrosPresenter implements Painel{
         view.setVisible(true);
         
         view.getRemoverButton().addActionListener((ActionEvent e)->{
+            if(view.getjTable1().getSelectedRow() !=-1)
             presenter.remMedicao(dados.get(view.getjTable1().getSelectedRow()));
         });
     }
@@ -42,13 +41,14 @@ public class RegistrosPresenter implements Painel{
                 break;
         }
         AlimentaTabela();
-        System.out.println(dados.size());
+        
     }
     
     public void AlimentaTabela(){
+        DateTimeFormatter formatter =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DefaultTableModel model = new DefaultTableModel((new String[]{"data","temperatura","umidade","pressão"}), 0);
         for(DadoClima x : dados ){
-            model.addRow(new Object[]{(x.getData()),(x.getTemperatura()),(x.getUmidade()),(x.getPressao())});
+            model.addRow(new Object[]{(x.getData().format(formatter)),(x.getTemperatura()),(x.getUmidade()),(x.getPressao())});
         }
         
         

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.pss.dadosclima.presenter.Panels;
 
 import com.pss.enums.Operacao;
@@ -11,10 +8,6 @@ import java.util.ArrayList;
 import javax.swing.JInternalFrame;
 
 
-/**
- *
- * @author UFES
- */
 public class MediaPresenter implements Painel{
     private MediaFrame view;
     private ArrayList<DadoClima> dados= new ArrayList<>();
@@ -44,7 +37,7 @@ public class MediaPresenter implements Painel{
        ArrayList<Float> medias = new ArrayList<>();
 
         if (dados.isEmpty()) {
-            // Adiciona zeros se a lista estiver vazia
+            
             medias.add(0.0f);
             medias.add(0.0f);
             medias.add(0.0f);
